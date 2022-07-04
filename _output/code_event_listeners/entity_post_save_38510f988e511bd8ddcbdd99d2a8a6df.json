@@ -1,0 +1,9 @@
+{
+    "event_id": "entity_post_save",
+    "execute_order": 10,
+    "callback_class": "MinecraftServerChecker\\Listener",
+    "callback_method": "threadPostSave",
+    "active": true,
+    "hint": "XF\\Entity\\Thread",
+    "description": "The event code will run when the custom thread field is saved."
+}

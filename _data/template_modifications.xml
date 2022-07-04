@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<template_modifications>
+  <modification type="public" template="forum_view" modification_key="msc_copy_js" description="Adds copy clipboard button for server ip address." execution_order="10" enabled="1" action="str_replace">
+    <find><![CDATA[<xf:extension name="thread_list">]]></find>
+    <replace><![CDATA[$0
+<script>
+function msc_copy_ip(ip) {
+    var copyText = document.getElementById("mscip-" + ip);  
+    var input = document.createElement("textarea");
+
+    input.value = copyText.textContent;
+    document.body.appendChild(input);
+    input.select();
+    document.execCommand("Copy");
+    input.remove();
+	
+  	XF.alert('{{ phrase("msc_copied_ip_address") }}', 'Copied!');
+}
+</script>]]></replace>
+  </modification>
+  <modification type="public" template="structured_list.less" modification_key="msc_structured_list" description="Adds style support for Minecraft Server information." execution_order="10" enabled="1" action="str_replace">
+    <find><![CDATA[.structItem-title
+{]]></find>
+    <replace><![CDATA[$0
+.msc-status {
+	color: #efefef;
+    border-color: transparent;
+    border-radius: 5px;
+}
+
+.msc-online {
+    background: #249a24;
+}
+
+.msc-offline {
+    background: #9a2424;
+}
+
+.msc-copyip {
+	color: #185886;
+	border-color: #e5e5e5;
+}
+
+.msc-copyip:hover {
+	cursor: pointer;
+}
+
+.msc-ip {
+	display: none;
+}]]></replace>
+  </modification>
+  <modification type="public" template="thread_list_macros" modification_key="msc_server_info_block" description="Adds server information to the thread list." execution_order="10" enabled="1" action="str_replace">
+    <find><![CDATA[<div class="structItem-title">]]></find>
+    <replace><![CDATA[$0
+<xf:macro name="{{ $templateOverrides.msc_server_info ?: 'msc_server_info::item' }}" />]]></replace>
+  </modification>
+</template_modifications>

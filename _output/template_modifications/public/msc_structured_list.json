@@ -1,0 +1,9 @@
+{
+    "template": "structured_list.less",
+    "description": "Adds style support for Minecraft Server information.",
+    "execution_order": 10,
+    "enabled": true,
+    "action": "str_replace",
+    "find": ".structItem-title\n{",
+    "replace": "$0\n.msc-status {\n\tcolor: #efefef;\n    border-color: transparent;\n    border-radius: 5px;\n}\n\n.msc-online {\n    background: #249a24;\n}\n\n.msc-offline {\n    background: #9a2424;\n}\n\n.msc-copyip {\n\tcolor: #185886;\n\tborder-color: #e5e5e5;\n}\n\n.msc-copyip:hover {\n\tcursor: pointer;\n}\n\n.msc-ip {\n\tdisplay: none;\n}"
+}

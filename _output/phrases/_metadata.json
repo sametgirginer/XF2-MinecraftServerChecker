@@ -1,0 +1,38 @@
+{
+    "cron_entry.msc_servers_cron.txt": {
+        "global_cache": false,
+        "version_id": 1000,
+        "version_string": "1.0.0",
+        "hash": "246995b27c27b28b0cb4dc62dea929fc"
+    },
+    "msc_copied_ip_address.txt": {
+        "global_cache": false,
+        "version_id": 1000,
+        "version_string": "1.0.0",
+        "hash": "6af6c47f8e914b712ece76152e3b41df"
+    },
+    "msc_copy_ip_address.txt": {
+        "global_cache": false,
+        "version_id": 1000,
+        "version_string": "1.0.0",
+        "hash": "2fff75b416a625d9787caa2494a46700"
+    },
+    "msc_max_players.txt": {
+        "global_cache": false,
+        "version_id": 1000,
+        "version_string": "1.0.0",
+        "hash": "89892a6a93b6776207c086da645c1329"
+    },
+    "msc_offline_server.txt": {
+        "global_cache": false,
+        "version_id": 1000,
+        "version_string": "1.0.0",
+        "hash": "7ed929f45ba34eff59d81d74d4f80a58"
+    },
+    "msc_online_players.txt": {
+        "global_cache": false,
+        "version_id": 1000,
+        "version_string": "1.0.0",
+        "hash": "ccf4c59cfa0dba7b63811d654a6feb14"
+    }
+}

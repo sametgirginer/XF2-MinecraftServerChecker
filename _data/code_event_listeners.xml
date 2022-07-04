@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<code_event_listeners>
+  <listener event_id="entity_post_save" execute_order="10" callback_class="MinecraftServerChecker\Listener" callback_method="threadPostSave" active="1" hint="XF\Entity\Thread" description="The event code will run when the custom thread field is saved."/>
+  <listener event_id="templater_macro_pre_render" execute_order="10" callback_class="MinecraftServerChecker\Listener" callback_method="templaterMacroPreRender" active="1" hint="public:msc_server_info:item" description="Macro variables"/>
+</code_event_listeners>

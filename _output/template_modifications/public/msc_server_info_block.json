@@ -1,0 +1,9 @@
+{
+    "template": "thread_list_macros",
+    "description": "Adds server information to the thread list.",
+    "execution_order": 10,
+    "enabled": true,
+    "action": "str_replace",
+    "find": "<div class=\"structItem-title\">",
+    "replace": "$0\n<xf:macro name=\"{{ $templateOverrides.msc_server_info ?: 'msc_server_info::item' }}\" />"
+}

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<templates>
+  <template type="public" title="msc_server_info" version_id="1000" version_string="1.0.0"><![CDATA[<xf:macro name="item" arg-thread="{$thread}">
+	
+	<xf:if is="$thread.custom_fields.msc_server_ip">
+		<span class="label msc-status msc-{$msc_status}">
+			<xf:if is="$msc_online">
+				<span data-xf-init="tooltip" data-original-title="{{ phrase('msc_online_players') }}">{$msc_online}</span>/<span data-xf-init="tooltip" data-original-title="{{ phrase('msc_max_players') }}">{$msc_max}</span>
+			<xf:else />
+				<span>{{ phrase('msc_offline_server') }}</span>
+			</xf:if>
+		</span>
+
+		<a class="labelLink" onclick="msc_copy_ip('{$msc_ip}')" 
+		   data-xf-init="tooltip" data-original-title="{{ phrase('msc_copy_ip_address') }}" >
+			<span class="label msc-copyip"><i class="fas fa-copy"></i></span>
+			<span id="mscip-{$msc_ip}" class="msc-ip">{$msc_ip}</span>
+		</a>
+	</xf:if>
+	
+</xf:macro>]]></template>
+</templates>

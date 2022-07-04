@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<phrases>
+  <phrase title="cron_entry.msc_servers_cron" version_id="1000" version_string="1.0.0"><![CDATA[Get server data]]></phrase>
+  <phrase title="msc_copied_ip_address" version_id="1000" version_string="1.0.0"><![CDATA[The server ip address has been copied.]]></phrase>
+  <phrase title="msc_copy_ip_address" version_id="1000" version_string="1.0.0"><![CDATA[Copy server ip address]]></phrase>
+  <phrase title="msc_max_players" version_id="1000" version_string="1.0.0"><![CDATA[Max Players]]></phrase>
+  <phrase title="msc_offline_server" version_id="1000" version_string="1.0.0"><![CDATA[OFFLINE]]></phrase>
+  <phrase title="msc_online_players" version_id="1000" version_string="1.0.0"><![CDATA[Online Players]]></phrase>
+</phrases>

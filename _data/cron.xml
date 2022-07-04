@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<cron>
+  <entry entry_id="msc_servers_cron" cron_class="MinecraftServerChecker\Cron" cron_method="getData" active="1"><![CDATA[{"day_type":"dom","dom":[-1],"hours":[-1],"minutes":[0,5,10,15,20,25,30,35,40,45,50,55]}]]></entry>
+</cron>

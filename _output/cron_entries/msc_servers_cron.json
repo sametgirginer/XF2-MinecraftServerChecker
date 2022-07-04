@@ -1,0 +1,28 @@
+{
+    "cron_class": "MinecraftServerChecker\\Cron",
+    "cron_method": "getData",
+    "run_rules": {
+        "day_type": "dom",
+        "dom": [
+            -1
+        ],
+        "hours": [
+            -1
+        ],
+        "minutes": [
+            0,
+            5,
+            10,
+            15,
+            20,
+            25,
+            30,
+            35,
+            40,
+            45,
+            50,
+            55
+        ]
+    },
+    "active": true
+}
