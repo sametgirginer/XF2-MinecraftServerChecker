@@ -17,6 +17,8 @@ class Listener
 
         $server_ip = "";
 
+        if (!isset($old_server_ip['msc_server_ip']) || !isset($new_server_ip['custom_fields'])) return;
+
         if ($old_server_ip) $server_ip = $old_server_ip['msc_server_ip'];
         else if ($new_server_ip) $server_ip = $new_server_ip['custom_fields']['msc_server_ip'];
 
@@ -54,7 +56,8 @@ class Listener
 
     public static function templaterMacroPreRender(Templater $templater, &$type, &$template, &$name, array &$arguments, array &$globalVars)
     {
-        $thread_id = $globalVars['thread']->thread_id;
+        $thread_id = ($globalVars['thread']) ? $globalVars['thread']->thread_id : null;
+        if ($thread_id === null) return;
         
         $db = \XF::Db();
         $server = $db->query('SELECT * FROM xf_msc_servers WHERE thread_id = ?', $thread_id)->fetch();
