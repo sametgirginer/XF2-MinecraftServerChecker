@@ -1,9 +1,9 @@
 {
-    "template": "forum_view",
+    "template": "PAGE_CONTAINER",
     "description": "Adds copy clipboard button for server ip address.",
     "execution_order": 10,
     "enabled": true,
     "action": "str_replace",
-    "find": "<xf:extension name=\"thread_list\">",
+    "find": "{$ldJsonHtml|raw}",
     "replace": "$0\n<script>\nfunction msc_copy_ip(ip) {\n    var copyText = document.getElementById(\"mscip-\" + ip);  \n    var input = document.createElement(\"textarea\");\n\n    input.value = copyText.textContent;\n    document.body.appendChild(input);\n    input.select();\n    document.execCommand(\"Copy\");\n    input.remove();\n\t\n  \tXF.alert('{{ phrase(\"msc_copied_ip_address\") }}', 'Copied!');\n}\n</script>"
 }

@@ -1,17 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <template_modifications>
-  <modification type="public" template="PAGE_CONTAINER" modification_key="msc_thread_title" description="Adds server information to the thread title." execution_order="10" enabled="1" action="str_replace">
-    <find><![CDATA[<h1 class="p-title-value">]]></find>
-    <replace><![CDATA[$0
-<xf:macro name="{{ $templateOverrides.msc_server_info ?: 'msc_server_info::thread_view' }}" />]]></replace>
-  </modification>
-  <modification type="public" template="core.less" modification_key="msc_structured_list" description="Adds style support for Minecraft Server information." execution_order="10" enabled="1" action="str_replace">
-    <find><![CDATA[{{ include('core_bbcode.less') }}]]></find>
-    <replace><![CDATA[$0
-{{ include('msc.less') }}]]></replace>
-  </modification>
-  <modification type="public" template="forum_view" modification_key="msc_copy_js" description="Adds copy clipboard button for server ip address." execution_order="10" enabled="1" action="str_replace">
-    <find><![CDATA[<xf:extension name="thread_list">]]></find>
+  <modification type="public" template="PAGE_CONTAINER" modification_key="msc_copy_js" description="Adds copy clipboard button for server ip address." execution_order="10" enabled="1" action="str_replace">
+    <find><![CDATA[{$ldJsonHtml|raw}]]></find>
     <replace><![CDATA[$0
 <script>
 function msc_copy_ip(ip) {
@@ -27,6 +17,16 @@ function msc_copy_ip(ip) {
   	XF.alert('{{ phrase("msc_copied_ip_address") }}', 'Copied!');
 }
 </script>]]></replace>
+  </modification>
+  <modification type="public" template="PAGE_CONTAINER" modification_key="msc_thread_title" description="Adds server information to the thread title." execution_order="10" enabled="1" action="str_replace">
+    <find><![CDATA[<h1 class="p-title-value">]]></find>
+    <replace><![CDATA[$0
+<xf:macro name="{{ $templateOverrides.msc_server_info ?: 'msc_server_info::thread_view' }}" />]]></replace>
+  </modification>
+  <modification type="public" template="core.less" modification_key="msc_structured_list" description="Adds style support for Minecraft Server information." execution_order="10" enabled="1" action="str_replace">
+    <find><![CDATA[{{ include('core_bbcode.less') }}]]></find>
+    <replace><![CDATA[$0
+{{ include('msc.less') }}]]></replace>
   </modification>
   <modification type="public" template="thread_list_macros" modification_key="msc_item_new_posts" description="Adds server information to the thread list for widgets." execution_order="10" enabled="1" action="str_replace">
     <find><![CDATA[			<xf:if is="$thread.isUnread()">

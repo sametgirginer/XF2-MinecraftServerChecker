@@ -19,8 +19,9 @@
 </xf:macro>
 
 <xf:macro name="thread_view">
-	
+
 	<xf:if is="$msc_title">
+		<xf:if is="$msc_ip">
 		<span class="label msc-status msc-{$msc_status}">
 			<xf:if is="{$msc_status} === 'online'">
 				<span data-xf-init="tooltip" data-original-title="{{ phrase('msc_online_players') }}">{$msc_online}</span>/<span data-xf-init="tooltip" data-original-title="{{ phrase('msc_max_players') }}">{$msc_max}</span>
@@ -34,6 +35,7 @@
 			<span class="label msc-copyip"><i class="fas fa-copy"></i></span>
 			<span id="mscip-{$msc_ip}" class="msc-ip">{$msc_ip}</span>
 		</a>
+		</xf:if>
 	</xf:if>
 	
 </xf:macro>
