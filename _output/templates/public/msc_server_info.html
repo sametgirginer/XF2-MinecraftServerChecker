@@ -1,8 +1,28 @@
-<xf:macro name="item" arg-thread="{$thread}">
+<xf:macro name="thread_list" arg-thread="{$thread}">
 	
 	<xf:if is="$thread.custom_fields.msc_server_ip">
 		<span class="label msc-status msc-{$msc_status}">
-			<xf:if is="$msc_online">
+			<xf:if is="{$msc_status} === 'online'">
+				<span data-xf-init="tooltip" data-original-title="{{ phrase('msc_online_players') }}">{$msc_online}</span>/<span data-xf-init="tooltip" data-original-title="{{ phrase('msc_max_players') }}">{$msc_max}</span>
+			<xf:else />
+				<span>{{ phrase('msc_offline_server') }}</span>
+			</xf:if>
+		</span>
+
+		<a class="labelLink" onclick="msc_copy_ip('{$msc_ip}')" 
+		   data-xf-init="tooltip" data-original-title="{{ phrase('msc_copy_ip_address') }}" >
+			<span class="label msc-copyip"><i class="fas fa-copy"></i></span>
+			<span id="mscip-{$msc_ip}" class="msc-ip">{$msc_ip}</span>
+		</a>
+	</xf:if>
+	
+</xf:macro>
+
+<xf:macro name="thread_view">
+	
+	<xf:if is="$msc_title">
+		<span class="label msc-status msc-{$msc_status}">
+			<xf:if is="{$msc_status} === 'online'">
 				<span data-xf-init="tooltip" data-original-title="{{ phrase('msc_online_players') }}">{$msc_online}</span>/<span data-xf-init="tooltip" data-original-title="{{ phrase('msc_max_players') }}">{$msc_max}</span>
 			<xf:else />
 				<span>{{ phrase('msc_offline_server') }}</span>

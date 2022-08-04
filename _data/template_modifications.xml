@@ -1,5 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <template_modifications>
+  <modification type="public" template="PAGE_CONTAINER" modification_key="msc_thread_title" description="Adds server information to the thread title." execution_order="10" enabled="1" action="str_replace">
+    <find><![CDATA[<h1 class="p-title-value">]]></find>
+    <replace><![CDATA[$0
+<xf:macro name="{{ $templateOverrides.msc_server_info ?: 'msc_server_info::thread_view' }}" />]]></replace>
+  </modification>
+  <modification type="public" template="core.less" modification_key="msc_structured_list" description="Adds style support for Minecraft Server information." execution_order="10" enabled="1" action="str_replace">
+    <find><![CDATA[{{ include('core_bbcode.less') }}]]></find>
+    <replace><![CDATA[$0
+{{ include('msc.less') }}]]></replace>
+  </modification>
   <modification type="public" template="forum_view" modification_key="msc_copy_js" description="Adds copy clipboard button for server ip address." execution_order="10" enabled="1" action="str_replace">
     <find><![CDATA[<xf:extension name="thread_list">]]></find>
     <replace><![CDATA[$0
@@ -18,40 +28,25 @@ function msc_copy_ip(ip) {
 }
 </script>]]></replace>
   </modification>
-  <modification type="public" template="structured_list.less" modification_key="msc_structured_list" description="Adds style support for Minecraft Server information." execution_order="10" enabled="1" action="str_replace">
-    <find><![CDATA[.structItem-title
-{]]></find>
+  <modification type="public" template="thread_list_macros" modification_key="msc_item_new_posts" description="Adds server information to the thread list for widgets." execution_order="10" enabled="1" action="str_replace">
+    <find><![CDATA[			<xf:if is="$thread.isUnread()">
+				<a href="{{ link('threads/unread', $thread) }}">{{ prefix('thread', $thread) }}{$thread.title}</a>
+			<xf:else />
+				<a href="{{ link('threads/post', $thread, {'post_id': $thread.last_post_id}) }}">{{ prefix('thread', $thread) }}{$thread.title}</a>
+			</xf:if>]]></find>
     <replace><![CDATA[$0
-.msc-status {
-	color: #efefef;
-    border-color: transparent;
-    border-radius: 5px;
-}
-
-.msc-online {
-    background: #249a24;
-}
-
-.msc-offline {
-    background: #9a2424;
-}
-
-.msc-copyip {
-	color: #185886;
-	border-color: #e5e5e5;
-}
-
-.msc-copyip:hover {
-	cursor: pointer;
-}
-
-.msc-ip {
-	display: none;
-}]]></replace>
+<br>
+<xf:macro name="{{ $templateOverrides.msc_server_info ?: 'msc_server_info::thread_list' }}" />]]></replace>
+  </modification>
+  <modification type="public" template="thread_list_macros" modification_key="msc_item_new_threads" description="Adds server information to the thread list for widgets." execution_order="10" enabled="1" action="str_replace">
+    <find><![CDATA[<a href="{{ link('threads', $thread) }}">{{ prefix('thread', $thread) }}{$thread.title}</a>]]></find>
+    <replace><![CDATA[$0
+<br>
+<xf:macro name="{{ $templateOverrides.msc_server_info ?: 'msc_server_info::thread_list' }}" />]]></replace>
   </modification>
   <modification type="public" template="thread_list_macros" modification_key="msc_server_info_block" description="Adds server information to the thread list." execution_order="10" enabled="1" action="str_replace">
     <find><![CDATA[<div class="structItem-title">]]></find>
     <replace><![CDATA[$0
-<xf:macro name="{{ $templateOverrides.msc_server_info ?: 'msc_server_info::item' }}" />]]></replace>
+<xf:macro name="{{ $templateOverrides.msc_server_info ?: 'msc_server_info::thread_list' }}" />]]></replace>
   </modification>
 </template_modifications>

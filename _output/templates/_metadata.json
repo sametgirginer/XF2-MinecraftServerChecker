@@ -1,7 +1,12 @@
 {
+    "public/msc.less": {
+        "version_id": 1020,
+        "version_string": "1.0.2",
+        "hash": "262ee085fef232ed4078c159ced2cd1b"
+    },
     "public/msc_server_info.html": {
-        "version_id": 1000,
-        "version_string": "1.0.0",
-        "hash": "00904930c5e8e35ecff2784a76282c9c"
+        "version_id": 1020,
+        "version_string": "1.0.2",
+        "hash": "92dd856654890eb4756b6a1870e2a2aa"
     }
 }

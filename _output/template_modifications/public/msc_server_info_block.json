@@ -5,5 +5,5 @@
     "enabled": true,
     "action": "str_replace",
     "find": "<div class=\"structItem-title\">",
-    "replace": "$0\n<xf:macro name=\"{{ $templateOverrides.msc_server_info ?: 'msc_server_info::item' }}\" />"
+    "replace": "$0\n<xf:macro name=\"{{ $templateOverrides.msc_server_info ?: 'msc_server_info::thread_list' }}\" />"
 }

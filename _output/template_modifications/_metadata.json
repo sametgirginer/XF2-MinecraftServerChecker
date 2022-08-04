@@ -2,10 +2,19 @@
     "public/msc_copy_js.json": {
         "hash": "4c9e9ca4b1ca9ffa50fff17263c633ec"
     },
+    "public/msc_item_new_posts.json": {
+        "hash": "95b2fae1c433de3fc5154926f30fe92d"
+    },
+    "public/msc_item_new_threads.json": {
+        "hash": "a6485ab07461d6e97de89f5eee6acf2e"
+    },
     "public/msc_server_info_block.json": {
-        "hash": "be91d8ad01128b34d860612837da87be"
+        "hash": "9e0aa74de1cf9aae6a23c50a57e97e7e"
     },
     "public/msc_structured_list.json": {
-        "hash": "f4704d8784a025fee46180e2a4405580"
+        "hash": "66aa3eed1aed3dcb3490c0c43efb518a"
+    },
+    "public/msc_thread_title.json": {
+        "hash": "b332f24a4181a035bc3c66f074a093a1"
     }
 }

@@ -1,0 +1,9 @@
+{
+    "template": "thread_list_macros",
+    "description": "Adds server information to the thread list for widgets.",
+    "execution_order": 10,
+    "enabled": true,
+    "action": "str_replace",
+    "find": "\t\t\t<xf:if is=\"$thread.isUnread()\">\n\t\t\t\t<a href=\"{{ link('threads/unread', $thread) }}\">{{ prefix('thread', $thread) }}{$thread.title}</a>\n\t\t\t<xf:else />\n\t\t\t\t<a href=\"{{ link('threads/post', $thread, {'post_id': $thread.last_post_id}) }}\">{{ prefix('thread', $thread) }}{$thread.title}</a>\n\t\t\t</xf:if>",
+    "replace": "$0\n<br>\n<xf:macro name=\"{{ $templateOverrides.msc_server_info ?: 'msc_server_info::thread_list' }}\" />"
+}

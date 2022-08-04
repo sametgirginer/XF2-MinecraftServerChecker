@@ -1,0 +1,9 @@
+{
+    "template": "thread_list_macros",
+    "description": "Adds server information to the thread list for widgets.",
+    "execution_order": 10,
+    "enabled": true,
+    "action": "str_replace",
+    "find": "<a href=\"{{ link('threads', $thread) }}\">{{ prefix('thread', $thread) }}{$thread.title}</a>",
+    "replace": "$0\n<br>\n<xf:macro name=\"{{ $templateOverrides.msc_server_info ?: 'msc_server_info::thread_list' }}\" />"
+}

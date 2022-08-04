@@ -56,7 +56,16 @@ class Listener
 
     public static function templaterMacroPreRender(Templater $templater, &$type, &$template, &$name, array &$arguments, array &$globalVars)
     {
-        $thread_id = ($globalVars['thread']) ? $globalVars['thread']->thread_id : null;
+        $thread_id = null;
+        $msc_title = false;
+
+        if ($name === "thread_list") {
+            $thread_id = ($globalVars['thread']) ? $globalVars['thread']->thread_id : null;
+        } else if ($name === "thread_view") {
+            $thread_id = ($globalVars['constraint']['c']['thread'] && !$globalVars['thread']) ? $globalVars['constraint']['c']['thread'] : null;
+            $msc_title = true;
+        }
+
         if ($thread_id === null) return;
         
         $db = \XF::Db();
@@ -68,6 +77,7 @@ class Listener
             'msc_status' => $status,
             'msc_online' => $server['online'],
             'msc_max' => $server['max'],
+            'msc_title' => $msc_title,
         ]);
     }
 }

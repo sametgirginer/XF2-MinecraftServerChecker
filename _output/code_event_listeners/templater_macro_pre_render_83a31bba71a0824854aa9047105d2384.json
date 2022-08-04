@@ -4,6 +4,6 @@
     "callback_class": "MinecraftServerChecker\\Listener",
     "callback_method": "templaterMacroPreRender",
     "active": true,
-    "hint": "public:msc_server_info:item",
-    "description": "Macro variables"
+    "hint": "public:msc_server_info:thread_list",
+    "description": "Thread list event listener"
 }
