@@ -4,6 +4,6 @@
     "execution_order": 10,
     "enabled": true,
     "action": "str_replace",
-    "find": "<div class=\"structItem-title\">",
+    "find": "<xf:set var=\"$canPreview\" value=\"{{ $thread.canPreview() }}\" />",
     "replace": "$0\n<xf:macro name=\"{{ $templateOverrides.msc_server_info ?: 'msc_server_info::thread_list' }}\" />"
 }

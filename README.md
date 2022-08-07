@@ -17,9 +17,9 @@ It simply pulls server data with Custom Thread Field.
 3. **Select applicable forums** for the **custom thread field** (admin.php?custom-thread-fields/msc_server_ip/edit).
 4. Go to a applicable thread and fill in the "**Minecraft Server IP Address**" field.
 
-### CSS Examples (for extra.less)
+### CSS Examples (for msc.less)
 ------------
-```css
+```less
 .msc-status {
 	color: #efefef;
 }
