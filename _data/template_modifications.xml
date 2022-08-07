@@ -45,7 +45,7 @@ function msc_copy_ip(ip) {
 <xf:macro name="{{ $templateOverrides.msc_server_info ?: 'msc_server_info::thread_list' }}" />]]></replace>
   </modification>
   <modification type="public" template="thread_list_macros" modification_key="msc_server_info_block" description="Adds server information to the thread list." execution_order="10" enabled="1" action="str_replace">
-    <find><![CDATA[<div class="structItem-title">]]></find>
+    <find><![CDATA[<xf:set var="$canPreview" value="{{ $thread.canPreview() }}" />]]></find>
     <replace><![CDATA[$0
 <xf:macro name="{{ $templateOverrides.msc_server_info ?: 'msc_server_info::thread_list' }}" />]]></replace>
   </modification>
