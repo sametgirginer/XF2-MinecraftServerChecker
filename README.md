@@ -37,3 +37,7 @@ It simply pulls server data with Custom Thread Field.
 	border-color: #e5e5e5;
 }
 ```
+
+### To Do List
+
+- Votifier ☐
