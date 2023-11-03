@@ -1,0 +1,13 @@
+{
+    "edit_format": "select",
+    "edit_format_params": "mcsrvstatus=mcsrvstat.us\nkeyubu=api.keyubu.net",
+    "data_type": "string",
+    "sub_options": [],
+    "validation_class": "",
+    "validation_method": "",
+    "advanced": false,
+    "default_value": "",
+    "relations": {
+        "minecraft_server_checker": 1
+    }
+}

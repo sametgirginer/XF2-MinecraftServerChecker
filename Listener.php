@@ -4,6 +4,7 @@ namespace MinecraftServerChecker;
 
 use XF\Mvc\Entity\Entity;
 use XF\Template\Templater;
+use MinecraftServerChecker\Server;
 
 class Listener
 {
@@ -23,31 +24,20 @@ class Listener
         else if ($new_server_ip) $server_ip = $new_server_ip['custom_fields']['msc_server_ip'];
 
         if ($server_ip) {
-            $client = \XF::app()->http()->client(['headers' => ['Accept' => 'application/json']]);
-            $response = $client->get('https://api.mcsrvstat.us/2/' . $server_ip);
-            $data = \GuzzleHttp\json_decode($response->getBody(), true);
-            
             $server_ip = strtolower($server_ip);
-            $status = ($data['online'] === true) ? 1 : 0;
-            $online = 0;
-            $max = 1;
-
-            if ($data['online']) {
-                $online = $data['players']['online'];
-                $max = $data['players']['max'];
-            }
+            $data = Server::getServerData($server_ip);
 
             if (!$thread && $server_ip) {
                 $db->insert('xf_msc_servers', [
                     'thread_id'     => $thread_id,
                     'ip'            => $server_ip,
-                    'status'        => $status,
-                    'online'        => $online,
-                    'max'           => $max,
+                    'status'        => $data['status'],
+                    'online'        => $data['online'],
+                    'max'           => $data['max'],
                     'last_update'   => time(),
                 ]);
             } else if ($thread && $server_ip && $new_server_ip) {
-                $db->query('UPDATE xf_msc_servers SET ip = ?, status = ?, online = ?, max = ? WHERE thread_id = ?', [$server_ip, $status, $online, $max, $thread_id]);
+                $db->query('UPDATE xf_msc_servers SET ip = ?, status = ?, online = ?, max = ? WHERE thread_id = ?', [$server_ip, $data['status'], $data['online'], $data['max'], $thread_id]);
             }
         } else if ($thread && !$server_ip) {
             $db->query('DELETE FROM xf_msc_servers WHERE thread_id = ?', $thread_id);

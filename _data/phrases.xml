@@ -6,4 +6,8 @@
   <phrase title="msc_max_players" version_id="1000" version_string="1.0.0"><![CDATA[Max Players]]></phrase>
   <phrase title="msc_offline_server" version_id="1000" version_string="1.0.0"><![CDATA[OFFLINE]]></phrase>
   <phrase title="msc_online_players" version_id="1000" version_string="1.0.0"><![CDATA[Online Players]]></phrase>
+  <phrase title="option.msc_api" version_id="1050" version_string="1.0.5"><![CDATA[Server API]]></phrase>
+  <phrase title="option_explain.msc_api" version_id="1050" version_string="1.0.5"><![CDATA[]]></phrase>
+  <phrase title="option_group.minecraft_server_checker" version_id="1050" version_string="1.0.5"><![CDATA[Minecraft Server Checker]]></phrase>
+  <phrase title="option_group_description.minecraft_server_checker" version_id="1050" version_string="1.0.5"><![CDATA[]]></phrase>
 </phrases>

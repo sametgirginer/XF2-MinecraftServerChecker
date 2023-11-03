@@ -34,5 +34,29 @@
         "version_id": 1000,
         "version_string": "1.0.0",
         "hash": "ccf4c59cfa0dba7b63811d654a6feb14"
+    },
+    "option.msc_api.txt": {
+        "global_cache": false,
+        "version_id": 1050,
+        "version_string": "1.0.5",
+        "hash": "a34f3170c0666670620c8eafa9269035"
+    },
+    "option_explain.msc_api.txt": {
+        "global_cache": false,
+        "version_id": 1050,
+        "version_string": "1.0.5",
+        "hash": "d41d8cd98f00b204e9800998ecf8427e"
+    },
+    "option_group.minecraft_server_checker.txt": {
+        "global_cache": false,
+        "version_id": 1050,
+        "version_string": "1.0.5",
+        "hash": "f8acec4d0605129cfdcbbd4c7c411b61"
+    },
+    "option_group_description.minecraft_server_checker.txt": {
+        "global_cache": false,
+        "version_id": 1050,
+        "version_string": "1.0.5",
+        "hash": "d41d8cd98f00b204e9800998ecf8427e"
     }
 }

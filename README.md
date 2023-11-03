@@ -5,7 +5,8 @@ It simply pulls server data with Custom Thread Field.
 
 - Server data is updated with CRON every 5 minutes.
     - CRON: `*/5 * * * *`
-    - API: [mcsrvstat.us](https://mcsrvstat.us/)
+    - API1: [mcsrvstat.us](https://mcsrvstat.us/)
+    - API2: [keyubu.com](https://keyubu.com/)
 - Easy setup & detailed informations.
 - Supports regex for custom thread field.
     - REGEX: `/(([a-zA-Z0-9-])+[.]+([a-zA-Z0-9-])+[.]+([a-zA-Z0-9-])+)|([a-zA-Z0-9-])+[.]+([a-zA-Z0-9-])+/g`
