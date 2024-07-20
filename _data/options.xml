@@ -3,6 +3,7 @@
   <option option_id="msc_api" edit_format="select" data_type="string" advanced="0">
     <default_value></default_value>
     <edit_format_params>mcsrvstatus=mcsrvstat.us
+mcapius=mcapi.us
 keyubu=api.keyubu.net</edit_format_params>
     <relation group_id="minecraft_server_checker" display_order="1"/>
   </option>

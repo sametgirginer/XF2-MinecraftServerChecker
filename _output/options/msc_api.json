@@ -1,6 +1,6 @@
 {
     "edit_format": "select",
-    "edit_format_params": "mcsrvstatus=mcsrvstat.us\nkeyubu=api.keyubu.net",
+    "edit_format_params": "mcsrvstatus=mcsrvstat.us\nmcapius=mcapi.us\nkeyubu=api.keyubu.net",
     "data_type": "string",
     "sub_options": [],
     "validation_class": "",

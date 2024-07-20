@@ -22,6 +22,15 @@ class Server
                 $online = $rawdata['players']['online'];
                 $max = $rawdata['players']['max'];
             }
+        } else if ($api === "mcapius") {
+            $response = $client->get('https://mcapi.us/server/status?ip=' . $server_ip . '&port=25565');
+            $rawdata = \GuzzleHttp\json_decode($response->getBody(), true);
+            
+            $status = ($rawdata['online'] === true) ? 1 : 0;
+            if ($rawdata['online']) {
+                $online = $rawdata['players']['now'];
+                $max = $rawdata['players']['max'];
+            } 
         } else {
             $response = $client->get('https://api.keyubu.net/minecraft/json.php?host=' . $server_ip . '&port=25565');
             $rawdata = \GuzzleHttp\json_decode($response->getBody(), true);
